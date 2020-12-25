@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% include 'navbar.html' %}
+<div class="form-popup">
+    <div class="container form-wrapper">
+        <button class="btn close-form">Close</button>
+        <form id="log-form" method="post" novalidate="novalidate">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="form-title">Log in!</h1>
+                </div>
+            </div>
+            <div class="row">
+                {% csrf_token %}
+                {{ log_form.as_p }}
+            </div>
+
+            <input type="submit" value="Login" class="btn send-form">
+        </form>
+    </div>
+</div>
+
+
+<main role="main" class="full-height">
+    <div class="absolute-center">
+        <section>
+            <div class="container">
+                <div class="row maininfo">
+                    <div class="col-10">
+                        <h3>This site will help you to create surveys. Click <span>create survey</span> to getting started!</h3>
+                    </div>
+                </div>
+                <div class="row buttons">
+                    <div class="col-12 col-md-8 col-sm-8">
+                        <a class="button-4" href="{% url 'basic_app:createsurvey' %}">Create Survey</a>
+                        <a id="b2" class="btn button1 pnk" style="margin-left: 4em" href="{% url 'accounts:login' %}">Login</a>
+                        <!--<a id="b2" class="btn open-form button1 pnk" style="margin-left: 4em">Login</a>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+    {% include 'footer.html' %}
+{% endblock %}

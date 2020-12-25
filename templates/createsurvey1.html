@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a class="goback" href="{% url 'basic_app:createsurvey' %}"></a>
+
+    <div class="form-popup">
+        <div class="container form-wrapper">
+            <button class="btn close-form">Close</button>
+            <form action="">
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label for="title">Question:</label>
+                        <input type="text" class="form-control" id="qtitle" name="title" required="">
+                    </div>
+                </div>
+                <div id="addedvarlist" class="row">
+
+                </div>
+                <div class="row">
+                    <div class="choises form-group col-9">
+                        <label for="openvar">Variant:</label>
+                        <input type="text" class="form-control" id="ovar" name="openvar" required="">
+                    </div>
+                    <div class="choises form-group col-3" style="align-self: flex-end">
+                        <button id="addvar" type="button" class="button2" style="margin: 0; width: inherit;">Add</button>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <label>Make question open?
+                        <input id="opencheck" type="checkbox" name="opencheck">
+                    </label>
+                </div>
+                <div class="choises form-check">
+                    <label>Make checkbox questions?
+                        <input id="checkcheck" type="checkbox" name="checkcheck">
+                    </label>
+                </div>
+                <input type="submit" value="Done" class="btn send-form">
+            </form>
+        </div>
+    </div>
+
+    <div class="form-popup2">
+        <div class="container form-wrapper" style="max-width: fit-content">
+        </div>
+    </div>
+
+    <!--<div class="form-popup">
+        <div class="container form-wrapper" style="max-width: fit-content">
+            <a class="btn button1 open-form1" style="padding: 10px; margin: 0;">Choise question</a>
+            <a class="btn button1 open-form2" style="padding: 10px">Open question</a>
+        </div>
+    </div>-->
+
+	<section class="full-height">
+		<div class="absolute-center card-large">
+            <button class="addbutton open-form">+</button>
+			<form>
+			</form>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'goback.html' %}
+
+    <section class="full-height">
+        <div class="absolute-center card-large-create">
+            <form method="post" style="width: 100%;">
+                {% csrf_token %}
+                <div class="row" style="margin-bottom: 30px;">
+                    <div class="col-12 col-md-3 align-self-center justify-content-md-end">
+                        <label for="title">Name:</label>
+                    </div>
+                    <div class="col-12">
+                        {{ survey_form.title }}
+                        <!--<input class="create-title" type="title" name="nameofs">-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-3 align-self-center justify-content-md-end">
+                        <label for="tags">Tags: </label>
+                    </div>
+                    <div class="col-12">
+                        <div id="tagscont"></div>
+                        <div class="row">
+                            <div class="col col-md-7">
+                                <input type="text" name="tag" style="width: inherit">
+                            </div>
+                            <div class="col col-md-5">
+                                {{ survey_form.tags }}
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row buttons">
+                    <div class="col-3 offset-md-9">
+                        <!--change to a with href="\{\% url 'basic_app:createsurvey1' %}" <span>Next</span>-->
+                        <input type="submit" class="btn button2" value="Next">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

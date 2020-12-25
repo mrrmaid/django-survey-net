@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<a class="goback" href="{% url 'index' %}"></a>
+	<section class="full-height">
+		<div class="absolute-center card-large">
+			<form>
+				<h4>1. What is your vehicle?</h4>
+				<label for="vehicle1">
+					<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+					<span class="checkmark"></span>
+					I have a bike
+				</label><br>
+				<label for="vehicle2">
+					<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+					<span class="checkmark"></span>
+					I have a car
+				</label><br>
+				<label for="vehicle3">
+					<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+					<span class="checkmark"></span>
+					I have a boat
+				</label>
+
+			  	<h4>2. How offten do you use it?</h4>
+			  	
+				<label for="male">
+					<input type="radio" id="male" name="gender" value="male">
+					<span class="radiu checkmark"></span>
+					Once a week
+				</label>
+				<br>
+				<label for="female">
+					<input type="radio" id="female" name="gender" value="female">
+					<span class="radiu checkmark"></span>
+					Twice a week
+				</label>
+				<br>
+				<label for="other">
+					<input type="radio" id="other" name="gender" value="other">
+					<span class="radiu checkmark"></span>
+					More times
+				</label>
+			</form>
+		
+		</div>
+	</section>
+{% endblock %}
